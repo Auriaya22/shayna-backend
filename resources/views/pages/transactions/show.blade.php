@@ -17,11 +17,11 @@
   </tr>
   <tr>
     <th>Total Transaksi</th>
-    <td>{{ $item->transaction_total }}</td>
+    <td>Rp. {{ number_format($item->transaction_total, 0, ',', '.') }}</td>
   </tr>
   <tr>
     <th>Status Transaksi</th>
-    <td>{{ $item->transaction_status }}</td>
+    <td>Rp. {{ $item->transaction_status }}</td>
   </tr>
   <tr>
     <th>Pembelian Produk</th>
@@ -36,7 +36,7 @@
             <tr>
               <td>{{ $detail->product->name }}</td>
               <td>{{ $detail->product->type }}</td>
-              <td>${{ $detail->product->price }}</td>
+              <td>Rp. {{ number_format($detail->product->price, 0, ',', '.') }}</td>
             </tr>
         @endforeach
       </table>
