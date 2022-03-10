@@ -2,6 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\ProductController;
+use App\Http\Controllers\API\TransactionController;
+use App\Http\Controllers\API\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +20,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('products', [ProductController::class, 'all']);
+Route::get('products', [ProductController::class, 'all']);
+Route::get('transactions/{id}', [TransactionController::class, 'get']);
+Route::post('checkout', [CheckoutController::class, 'checkout']);
